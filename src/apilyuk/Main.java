@@ -31,7 +31,6 @@ public class Main {
         fileUtils.createFile("/Users/macbook/Downloads/testLab");
 
         Menu menu = new Menu();
-        menu.showMenu();
-        menu.readAnswer();
+        menu.runMenu();
     }
 }

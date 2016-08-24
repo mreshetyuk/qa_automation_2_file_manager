@@ -24,7 +24,7 @@ public class FileUtils {
         // начало блока обработки возможной ислючительной ситуации
         try {
             f.createNewFile();  // код, который потенциально может вызвать исключение (исключительную ситуацию), если
-                                // у программы не будет прав на работу с файлом или директорией, которые вы указали.
+            // у программы не будет прав на работу с файлом или директорией, которые вы указали.
         } catch (IOException e) {
             e.printStackTrace(); // код, который выполниться, если возникнет исклбчительная ситуация
         }
@@ -37,9 +37,26 @@ public class FileUtils {
      * если метод ничего не собирается возвращать,
      * используйте ключевое слово void, как в примере ниже
      */
-    public void deleteFile() {
+    public void deleteFile(String fullPathToFile) {
         //TODO - это тудушка, вставляйте ее в те части кода,
         // TODO - в которых не уверены, но хотите показать общий ход решения.
+    }
+
+    public void renameFile(String fullPathToFile) {
+        //TODO - это тудушка, вставляйте ее в те части кода,
+        // TODO - в которых не уверены, но хотите показать общий ход решения.
+    }
+
+    public int findWordOccurrenceInFile(String fullPathToFile, String word) {
+        int count = 0;
+        //TODO - цикл что бы пройтись по всему файлу
+        // TODO - так же нужен будет if что бы увеличивать count
+        // System.out.println("Word: " + word + " is present " + count + " in file " + fullPathToFile);
+        return count;
+    }
+
+    public void replaceWordInFile(String fullPathToFile, String word) {
+        //TODO
     }
 
     /**
@@ -66,9 +83,12 @@ public class FileUtils {
      * @return will return true if file exist and false if file doesn't exist
      */
     private boolean fileExist(String fullPathToFile) {
-
+        // 'Path' used to locate a file in a file system. It will
+        // typically represent a system dependent file path.
         Path path = Paths.get(fullPathToFile);
 
+        //  'Files' class consists exclusively of static methods that operate on files,
+        // directories, or other types of files.
         if (Files.exists(path)) {
             return true;
         }
